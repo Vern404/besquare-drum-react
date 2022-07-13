@@ -1,24 +1,17 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Header from "./Components/Header";
+import MainContainer from "./Components/MainContainer";
 
 function App() {
+  const [has_game_started, setStarted] = React.useState(false);
+  console.log("has_game_started", has_game_started);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header has_game_started={has_game_started} setStarted={setStarted} />
+      <MainContainer has_game_started={has_game_started} />
     </div>
   );
 }
